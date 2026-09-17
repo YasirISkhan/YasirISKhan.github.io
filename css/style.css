@@ -11076,3 +11076,119 @@ html, body {
     height: 180px;
   }
 }
+
+/* Hero carousel: explicit height per breakpoint (owl-carousel requires a fixed height, not auto) */
+.owl-carousel.home-slider,
+.owl-carousel.home-slider .slider-item,
+.owl-carousel.home-slider .slider-item .slider-text {
+  height: 750px;
+}
+
+@media (max-width: 991.98px) {
+  .owl-carousel.home-slider,
+  .owl-carousel.home-slider .slider-item,
+  .owl-carousel.home-slider .slider-item .slider-text {
+    height: 700px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .owl-carousel.home-slider,
+  .owl-carousel.home-slider .slider-item,
+  .owl-carousel.home-slider .slider-item .slider-text {
+    height: 640px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .owl-carousel.home-slider,
+  .owl-carousel.home-slider .slider-item,
+  .owl-carousel.home-slider .slider-item .slider-text {
+    height: 600px;
+  }
+}
+
+/*     text overflow fix       */
+/* ============================================================
+   MOBILE HOME PAGE FIXES
+   ============================================================ */
+
+/* 1 — Navbar container was locked to 1110px, overflowing phones */
+.ftco-navbar-light .container {
+  width: 100%;
+  max-width: 1110px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Safety net so no image can ever push the layout wide */
+img { max-width: 100%; }
+
+/* 2 — Let the hero grow with its content instead of being clipped */
+@media (max-width: 991.98px) {
+  .owl-carousel.home-slider,
+  .owl-carousel.home-slider .owl-stage-outer,
+  .owl-carousel.home-slider .owl-stage,
+  .owl-carousel.home-slider .owl-item,
+  .owl-carousel.home-slider .slider-item,
+  .owl-carousel.home-slider .slider-item .slider-text {
+    height: auto !important;
+    min-height: 0 !important;
+  }
+
+  .owl-carousel.home-slider .slider-item {
+    padding: 50px 0 60px;
+  }
+
+  /* 4 — Neutralise the scrollax transform that pushes text off-screen */
+  .owl-carousel.home-slider .slider-item .slider-text .one-forth,
+  .owl-carousel.home-slider .slider-item .slider-text .one-forth .text {
+    transform: none !important;
+    position: static !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 15px !important;
+    text-align: center;
+  }
+
+  /* Dots were absolutely pinned to the bottom of a fixed-height slide */
+  .owl-carousel.home-slider .owl-dots {
+    position: static;
+    margin-top: 24px;
+  }
+}
+
+/* 3 — Icon bar must wrap and centre */
+@media (max-width: 991.98px) {
+  .icon-bar {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 28px;
+    margin-bottom: 28px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .icon-bar { gap: 16px 18px; }
+  .icon-item svg { width: 24px; height: 24px; }
+  .icon-item span { font-size: 10px; }
+}
+
+/* Typography scaling so the hero text doesn't dominate the screen */
+@media (max-width: 767.98px) {
+  .owl-carousel.home-slider .slider-item .slider-text h1 { font-size: 34px; }
+  .owl-carousel.home-slider .slider-item .slider-text p { font-size: 18px; }
+  .hero p { font-size: 18px; margin-top: 0; }
+  .hero p span,
+  .typed-cursor { font-size: 20px; }
+  .hero-profile-img-container { width: 200px; height: 200px; }
+}
+
+/* About section readability on narrow screens */
+@media (max-width: 767.98px) {
+  .research-section { padding: 24px 20px; }
+  #about-section p[style*="justify"],
+  .research-desc { text-align: left !important; }
+  .cta-banner { padding: 36px 20px; }
+}
