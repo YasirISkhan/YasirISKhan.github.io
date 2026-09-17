@@ -56,7 +56,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 1rem;
   font-weight: 400;
-  line-height: 8.0;
+  line-height: 1.8;
   color: #212529;
   text-align: left;
   background-color: #fff; }
@@ -8143,9 +8143,9 @@ body {
   font-weight: 400;
   color: #999999; }
   body.menu-show {
-    overflow: auto;
-    position: static;
-    height: auto;
+    overflow: hidden;
+    position: fixed;
+    height: 100%;
     width: 100%; }
 
 a {
@@ -10169,14 +10169,10 @@ ul.list-unstyled {
   cursor: default;
 }
 
-body {
-  overflow-x: hidden;
-  width: 100%;
-}
-
-/* remove overflow-x: hidden from html entirely */
-html {
-  width: 100%;
+html, body {
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+  height: auto !important;
 }
 
 
@@ -11196,4 +11192,11 @@ img { max-width: 100%; }
   #about-section p[style*="justify"],
   .research-desc { text-align: left !important; }
   .cta-banner { padding: 36px 20px; }
+}
+
+@media (max-width: 767.98px) {
+  .hero, .home-slider, .slider-item {
+    height: auto !important;
+    min-height: 100vh;
+  }
 }
