@@ -10169,7 +10169,13 @@ ul.list-unstyled {
   cursor: default;
 }
 
-html, body {
+body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* remove overflow-x: hidden from html entirely */
+html {
   width: 100%;
 }
 
