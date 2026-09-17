@@ -6,7 +6,7 @@
 (function($) {
 
 	"use strict";
-
+/* 
 	$(window).stellar({
     responsive: true,
     parallaxBackgrounds: true,
@@ -15,6 +15,7 @@
     hideDistantElements: false,
     scrollProperty: 'scroll'
   });
+  */
 
 
 	var fullHeight = function() {
